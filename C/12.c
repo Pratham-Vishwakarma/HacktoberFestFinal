@@ -32,7 +32,43 @@
 
 // 1 <= money <= 200
 // 2 <= children <= 30
+#include<stdio.h>
 
 int distMoney(int money, int children) {
-    
+    int A[children], i, remain, count=0;
+    for(i=0; i<children;i++){
+        A[i]=1;
+    }
+    remain=money-children;
+    for(i=0;i<children;i++){
+        if(remain>=7){
+            A[i]=8;
+            remain=remain-7;
+        }
+        else{
+            A[i]=A[i]+remain;
+        }
+    }
+    for(i=0;i<children;i++){
+        if(A[i]==4){
+            A[i-1]=9;
+            A[i]=A[i]-1;
+        }
+    }
+    for(i=0;i<children;i++){
+        if(A[i]==8){
+            count++;
+        }
+    }
+    printf("%d", count);
+
+}
+
+int main(){
+    int money,children;
+    printf("Enter Money: ");
+    scanf("%d",&money);
+    printf("Enter Children: ");
+    scanf("%d", &children);
+    distMoney(money,children);
 }
