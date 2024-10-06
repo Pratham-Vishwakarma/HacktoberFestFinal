@@ -71,4 +71,5 @@ int main(){
     printf("Enter Children: ");
     scanf("%d", &children);
     distMoney(money,children);
+    
 }
