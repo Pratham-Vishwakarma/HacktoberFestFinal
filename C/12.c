@@ -65,11 +65,12 @@ int distMoney(int money, int children) {
 }
 
 int main(){
+    
     int money,children;
     printf("Enter Money: ");
     scanf("%d",&money);
     printf("Enter Children: ");
     scanf("%d", &children);
     distMoney(money,children);
-    
+
 }
